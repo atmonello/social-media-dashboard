@@ -12,17 +12,18 @@
 
 <style lang="scss">
 .dashboard__header {
+  width: 100%;
   display: flex;
+  align-items: center;
   justify-content: space-between;
-  height: 25vh;
-  background-color: $light-header-bg;
-  padding: 30px 60px;
 
-  &--dark {
-    background-color: $dark-header-bg;
+  &__text, &__toggle {
+    margin-top: 30px;
   }
 
   &__text {
+    margin-left: 60px;
+
     h1 {
       font-size: $font-size-large;
       color: $light-blue-text;
@@ -41,6 +42,10 @@
         color: $dark-white-text;
       }
     }
+  }
+
+  &__toggle {
+    margin-right: 40px;
   }
 }
 </style>
