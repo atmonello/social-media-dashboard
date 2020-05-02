@@ -13,6 +13,7 @@
 <style lang="scss">
 .dashboard__header {
   width: 100%;
+  max-width: 960px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -22,7 +23,7 @@
   }
 
   &__text {
-    margin-left: 60px;
+    // margin-left: 60px;
 
     h1 {
       font-size: $font-size-large;
@@ -44,9 +45,9 @@
     }
   }
 
-  &__toggle {
-    margin-right: 40px;
-  }
+  // &__toggle {
+  //   margin-right: 40px;
+  // }
 }
 </style>
 
