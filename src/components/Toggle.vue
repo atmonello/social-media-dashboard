@@ -1,9 +1,9 @@
 <template>
   <div class="dashboard__toggle">
-    <span>Dark Mode</span>
+    <span class="dashboard__toggle__label" :class="{'on': isDark}">Dark Mode</span>
     <div class="dashboard__toggle__container">
       <input type="radio" v-model="toggle" />
-      <div class="toggle" :class="{'on': toggle}" @click="setToggle()">
+      <div class="toggle" :class="{'on': isDark}" @click="setToggle()">
         <span class="toggle__icon"></span>
       </div>
     </div>
@@ -12,13 +12,15 @@
 
 <script lang="ts">
 import { Component, Vue } from "vue-property-decorator";
-import { Mutation } from "vuex-class";
+import { Mutation, Getter } from "vuex-class";
 
 @Component({
   name: "DashboardToggle",
 })
 export default class DashboardToggle extends Vue {
   @Mutation("setTheme") setTheme;
+
+  @Getter("getDarkTheme") isDark;
 
   private toggle = false;
 
@@ -36,6 +38,16 @@ export default class DashboardToggle extends Vue {
   align-items: center;
   padding-right: 64px;
 
+  &__label {
+    font-weight: 700;
+    color: $light-gray-text;
+    font-size: $font-size-small;
+
+    &.on {
+      color: $dark-white-text;
+    }
+  }
+
   &__container {
     position: relative;
     margin-left: 16px;
@@ -51,24 +63,23 @@ export default class DashboardToggle extends Vue {
       bottom: 0;
       margin: auto;
       border-radius: 20px;
-      background-color: blue;
+      background: $light-toggle;
       box-sizing: border-box;
       padding: 4px;
       display: flex;
-      justify-content: flex-start;
+      justify-content: flex-end;
       align-items: center;
 
       &__icon {
         border-radius: 100%;
-        border: 1px solid #fff;
         height: 100%;
         width: 24px;
         background-color: #fff;
       }
 
       &.on {
-        background: red;
-        justify-content: flex-end;
+        background: $dark-toggle;
+        justify-content: flex-start;
       }
     }
   }
