@@ -18,4 +18,9 @@ export default new Vuex.Store({
   },
   modules: {
   },
+  getters: {
+    getDarkTheme(state) {
+      return state.theme === "dark";
+    },
+  },
 });
