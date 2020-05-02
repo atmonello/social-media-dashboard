@@ -9,9 +9,12 @@ $view-tablet-max: 1024px;
 $view-desktop-small-max: 1440px;
 $view-infinity-min: $view-desktop-small-max + 1;
 
-body {
-    height: 100vh;
-    overflow: hidden;
+html, body {
+    min-height: 100vh;
+}
+
+html, body, * {
+    box-sizing: border-box;
 }
 
 .app {

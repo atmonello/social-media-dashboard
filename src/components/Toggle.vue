@@ -67,7 +67,6 @@ export default class DashboardToggle extends Vue {
       margin: auto;
       border-radius: 20px;
       background: $light-toggle;
-      box-sizing: border-box;
       padding: 4px;
       display: flex;
       justify-content: flex-end;

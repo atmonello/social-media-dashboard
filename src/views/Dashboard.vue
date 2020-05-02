@@ -6,11 +6,13 @@
 
 <script>
 import DashboardHeader from "@/components/Header.vue";
+import { Component, Vue } from "vue-property-decorator";
 
-export default {
+@Component({
   name: "Dashboard",
   components: {
     DashboardHeader,
   },
-};
+})
+export default class Dashboard extends Vue {}
 </script>

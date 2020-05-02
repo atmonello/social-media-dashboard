@@ -14,6 +14,11 @@
 .dashboard__header {
   display: flex;
   justify-content: space-between;
+  height: 20vh;
+
+  &--dark {
+
+  }
 
   &__text {
     h1 {
@@ -38,7 +43,7 @@
 }
 </style>
 
-<script>
+<script lang="ts">
 import DashboardToggle from "@/components/Toggle.vue";
 import { Component, Vue } from "vue-property-decorator";
 import { Getter } from "vuex-class";
