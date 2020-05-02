@@ -11,6 +11,7 @@ $view-infinity-min: $view-desktop-small-max + 1;
 
 html, body {
     min-height: 100vh;
+    height: 100%;
 }
 
 html, body, * {

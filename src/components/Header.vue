@@ -14,10 +14,12 @@
 .dashboard__header {
   display: flex;
   justify-content: space-between;
-  height: 20vh;
+  height: 25vh;
+  background-color: $light-header-bg;
+  padding: 30px 60px;
 
   &--dark {
-
+    background-color: $dark-header-bg;
   }
 
   &__text {

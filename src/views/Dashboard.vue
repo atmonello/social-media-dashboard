@@ -16,3 +16,9 @@ import { Component, Vue } from "vue-property-decorator";
 })
 export default class Dashboard extends Vue {}
 </script>
+
+<style lang="scss">
+.dashboard {
+  height: 100%;
+}
+</style>
