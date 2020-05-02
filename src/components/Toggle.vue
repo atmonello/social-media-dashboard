@@ -1,9 +1,12 @@
 <template>
   <div class="dashboard__toggle">
-    <span class="dashboard__toggle__label" :class="{'on': isDark}">Dark Mode</span>
+    <span
+      class="dashboard__toggle__label"
+      :class="{'dashboard__toggle__label--dark': isDark}"
+    >Dark Mode</span>
     <div class="dashboard__toggle__container">
       <input type="radio" v-model="toggle" />
-      <div class="toggle" :class="{'on': isDark}" @click="setToggle()">
+      <div class="toggle" :class="{'toggle--on': isDark}" @click="setToggle()">
         <span class="toggle__icon"></span>
       </div>
     </div>
@@ -43,7 +46,7 @@ export default class DashboardToggle extends Vue {
     color: $light-gray-text;
     font-size: $font-size-small;
 
-    &.on {
+    &--dark {
       color: $dark-white-text;
     }
   }
@@ -77,7 +80,7 @@ export default class DashboardToggle extends Vue {
         background-color: #fff;
       }
 
-      &.on {
+      &--on {
         background: $dark-toggle;
         justify-content: flex-start;
       }
