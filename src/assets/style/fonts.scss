@@ -1,0 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
+
+$font-size-tiny: 12px;
+$font-size-small: 14px;
+$font-size-regular: 16px;
+$font-size-large: 20px;
+
+body, input, textarea, * {
+    font-family: 'Inter', sans-serif;
+}

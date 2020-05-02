@@ -3,10 +3,16 @@ import Vuex from 'vuex';
 
 Vue.use(Vuex);
 
+type Theme = 'light' | 'dark';
+
 export default new Vuex.Store({
   state: {
+    theme: 'light',
   },
   mutations: {
+    setTheme(state, value: Theme) {
+      state.theme = value;
+    },
   },
   actions: {
   },

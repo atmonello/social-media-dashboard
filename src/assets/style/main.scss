@@ -1,0 +1,9 @@
+@import './reset.scss';
+@import './fonts.scss';
+@import './colors.scss';
+
+// breakpoints
+$view-mobile-max: 600px;
+$view-tablet-max: 1024px;
+$view-desktop-small-max: 1440px;
+$view-infinity-min: $view-desktop-small-max + 1;
