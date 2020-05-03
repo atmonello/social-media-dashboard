@@ -29,6 +29,8 @@
 import { Component, Vue, Prop } from "vue-property-decorator";
 import { Getter } from "vuex-class";
 
+import formatNumberUtils from "../../utils/formatNumber";
+
 import "./MediaCard.vue.scss";
 
 const Images = {
@@ -63,13 +65,6 @@ export default class DashboardMediaCard extends Vue {
     return Images[mediaName];
   }
 
-  public formatNumber(value: number) {
-    if (value < 10000) {
-      return value;
-    }
-
-    const valueStr = String(value);
-    return `${valueStr.slice(0, 2)}k`;
-  }
+  public formatNumber = formatNumberUtils;
 }
 </script>
