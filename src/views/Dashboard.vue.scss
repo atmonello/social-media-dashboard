@@ -1,0 +1,28 @@
+.dashboard {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  &__header__wrapper {
+    display: flex;
+    width: 100vw;
+    height: 25vh;
+    align-items: flex-start;
+    justify-content: center;
+    background-color: $light-header-bg;
+
+    &--dark {
+      background-color: $dark-header-bg;
+    }
+  }
+
+  &__media {
+    display: flex;
+    justify-content: space-around;
+    margin-top: -100px;
+    z-index: 1;
+    position: relative;
+    flex-wrap: wrap;
+  }
+}

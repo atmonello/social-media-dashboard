@@ -6,7 +6,7 @@
     ]">
       <dashboard-header />
     </div>
-    <div class="dashboard__media">
+    <div class="dashboard__media container">
       <dashboard-media-card
         v-for="media in socialMedia"
         :key="media.media"
@@ -15,15 +15,21 @@
         :media="media.media"
       />
     </div>
-    <div class="dashboard__overview"></div>
+    <div class="dashboard__overview container">
+      <dashboard-overview />
+    </div>
   </div>
 </template>
 
 <script lang="ts">
-import DashboardHeader from "@/components/Header.vue";
 import { Component, Vue } from "vue-property-decorator";
-import DashboardMediaCard from "@/components/MediaCard/MediaCard.vue";
 import { Getter } from "vuex-class";
+
+import DashboardHeader from "@/components/Header.vue";
+import DashboardMediaCard from "@/components/MediaCard/MediaCard.vue";
+import DashboardOverview from "@/components/Overview.vue";
+
+import "./Dashboard.vue.scss";
 
 interface SocialMedia {
   media: "facebook" | "twitter" | "instagram" | "youtube";
@@ -40,6 +46,7 @@ interface SocialMedia {
   components: {
     DashboardHeader,
     DashboardMediaCard,
+    DashboardOverview,
   },
 })
 export default class Dashboard extends Vue {
@@ -85,36 +92,3 @@ export default class Dashboard extends Vue {
   ];
 }
 </script>
-
-<style lang="scss">
-.dashboard {
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-
-  &__header__wrapper {
-    display: flex;
-    width: 100vw;
-    height: 25vh;
-    align-items: flex-start;
-    justify-content: center;
-    background-color: $light-header-bg;
-
-    &--dark {
-      background-color: $dark-header-bg;
-    }
-  }
-
-  &__media {
-    display: flex;
-    justify-content: space-around;
-    margin-top: -100px;
-    z-index: 1;
-    position: relative;
-    flex-wrap: wrap;
-    width: 100%;
-    max-width: 960px;
-  }
-}
-</style>
