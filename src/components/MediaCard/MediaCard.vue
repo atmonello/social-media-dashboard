@@ -10,7 +10,7 @@
       <p class="username__text">{{username}}</p>
     </div>
     <div class="followers">
-      <p>{{followers.count}}</p>
+      <p>{{formatNumber(followers.count)}}</p>
       <small>{{followers.label}}</small>
     </div>
     <div
@@ -20,7 +20,7 @@
       ]"
     >
       <i></i>
-      <span>{{followers.change}} Today</span>
+      <span>{{formatNumber(followers.change)}} Today</span>
     </div>
   </div>
 </template>
@@ -59,8 +59,17 @@ export default class DashboardMediaCard extends Vue {
   @Getter("getDarkTheme") isDark;
 
   // eslint-disable-next-line class-methods-use-this
-  public getImagePath(mediaName) {
+  public getImagePath(mediaName: string): string {
     return Images[mediaName];
+  }
+
+  public formatNumber(value: number) {
+    if (value < 10000) {
+      return value;
+    }
+
+    const valueStr = String(value);
+    return `${valueStr.slice(0, 2)}k`;
   }
 }
 </script>
