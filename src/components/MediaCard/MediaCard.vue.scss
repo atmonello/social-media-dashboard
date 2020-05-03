@@ -12,8 +12,8 @@
     background-color: $light-card-bg;
     flex: 1 1 0;
 
-    &:not(:first-of-type):not(:last-of-type) {
-      margin: 0 16px
+    &:not(:first-of-type) {
+      margin-left: 16px;
     }
   
     &--dark {
@@ -82,7 +82,7 @@
       margin: 12px 0 32px;
 
       p {
-        font-size: $font-size-large * 2.5;
+        font-size: $font-size-extra * 2;
         font-weight: 700;
         margin: 8px 0;
       }
