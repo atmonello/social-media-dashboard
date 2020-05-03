@@ -109,7 +109,7 @@ export default class Dashboard extends Vue {
   &__media {
     display: flex;
     justify-content: space-around;
-    margin-top: -50px;
+    margin-top: -100px;
     z-index: 1;
     position: relative;
     flex-wrap: wrap;
