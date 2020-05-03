@@ -22,7 +22,7 @@
 <script lang="ts">
 import DashboardHeader from "@/components/Header.vue";
 import { Component, Vue } from "vue-property-decorator";
-import DashboardMediaCard from "@/components/MediaCard.vue";
+import DashboardMediaCard from "@/components/MediaCard/MediaCard.vue";
 import { Getter } from "vuex-class";
 
 interface SocialMedia {
@@ -108,6 +108,7 @@ export default class Dashboard extends Vue {
 
   &__media {
     display: flex;
+    justify-content: space-around;
     margin-top: -50px;
     z-index: 1;
     position: relative;
