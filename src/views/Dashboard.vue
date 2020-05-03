@@ -4,7 +4,7 @@
       'dashboard__header__wrapper',
       {'dashboard__header__wrapper--dark': isDark}
     ]">
-      <dashboard-header />
+      <dashboard-header :followers="totalFollowers" />
     </div>
     <div class="dashboard__media container">
       <dashboard-media-card
@@ -57,7 +57,7 @@ export default class Dashboard extends Vue {
       media: "facebook",
       username: "atmonello",
       followers: {
-        count: 1234,
+        count: 12340,
         change: 78,
         label: "Followers",
       },
@@ -66,7 +66,7 @@ export default class Dashboard extends Vue {
       media: "twitter",
       username: "atmonello",
       followers: {
-        count: 987,
+        count: 9870,
         change: 102,
         label: "Followers",
       },
@@ -75,7 +75,7 @@ export default class Dashboard extends Vue {
       media: "instagram",
       username: "atmonello",
       followers: {
-        count: 1046,
+        count: 10460,
         change: 94,
         label: "Followers",
       },
@@ -84,11 +84,15 @@ export default class Dashboard extends Vue {
       media: "youtube",
       username: "atmonello",
       followers: {
-        count: 885,
+        count: 8850,
         change: -141,
         label: "Subscribers",
       },
     },
   ];
+
+  get totalFollowers(): number {
+    return this.socialMedia.reduce((sum, media) => sum + media.followers.count, 0);
+  }
 }
 </script>

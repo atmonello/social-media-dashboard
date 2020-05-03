@@ -2,7 +2,7 @@
   <header class="dashboard__header container" :class="{'dashboard__header--dark': isDark}">
     <div class="dashboard__header__text">
       <h1>Social Media Dashboard</h1>
-      <small>Total Followers: 23.004</small>
+      <small>Total Followers: {{followers}}</small>
     </div>
     <div class="dashboard__header__toggle">
       <dashboard-toggle />
@@ -21,8 +21,6 @@
   }
 
   &__text {
-    // margin-left: 60px;
-
     h1 {
       font-size: $font-size-large;
       color: $light-blue-text;
@@ -42,16 +40,12 @@
       }
     }
   }
-
-  // &__toggle {
-  //   margin-right: 40px;
-  // }
 }
 </style>
 
 <script lang="ts">
 import DashboardToggle from "@/components/Toggle.vue";
-import { Component, Vue } from "vue-property-decorator";
+import { Component, Vue, Prop } from "vue-property-decorator";
 import { Getter } from "vuex-class";
 
 @Component({
@@ -62,5 +56,7 @@ import { Getter } from "vuex-class";
 })
 export default class DashboardHeader extends Vue {
   @Getter("getDarkTheme") isDark;
+
+  @Prop({ required: true }) followers;
 }
 </script>
