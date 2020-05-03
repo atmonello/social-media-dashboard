@@ -56,7 +56,8 @@
         {
           "allowTemplateLiterals": true
         }
-      ]
+      ],
+      "class-methods-use-this": "off"
     }
   },
   "browserslist": [
